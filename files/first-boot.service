@@ -1,0 +1,10 @@
+[Unit]
+Description=First boot initialization
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/first-boot.sh
+
+[Install]
+WantedBy=multi-user.target
