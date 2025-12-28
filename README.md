@@ -14,6 +14,8 @@
 
 ## Introduction / 简介
 
+[![Watch the video](https://img.youtube.com/vi/wki4M4LAwpM/0.jpg)](https://youtu.be/wki4M4LAwpM)
+
 **English:**
 
 This project demonstrates how to build your own Golden Image using Packer and QEMU/KVM. It includes:
@@ -113,6 +115,7 @@ sudo systemctl enable --now libvirtd
 **English:**
 
 The script will auto-install missing dependencies, but you need:
+
 - Debian 11 (bullseye) or later
 - Root privileges
 - Network connectivity
@@ -121,6 +124,7 @@ The script will auto-install missing dependencies, but you need:
 **中文：**
 
 脚本会自动安装缺失的依赖，但你需要：
+
 - Debian 11 (bullseye) 或更高版本
 - Root 权限
 - 网络连接
@@ -279,26 +283,26 @@ Adjust TCP BBR, buffer sizes, and other kernel parameters as needed.
 
 ### Platform Limitations / 平台限制
 
-| Limitation / 限制 | Description / 说明 |
-|---|---|
-| **No OpenVZ** | This image requires full virtualization (KVM/Xen HVM). OpenVZ/LXC containers are NOT supported. / 此镜像需要全虚拟化（KVM/Xen HVM），不支持 OpenVZ/LXC 容器。 |
-| **Architecture** | Only amd64 and arm64 are supported. / 仅支持 amd64 和 arm64 架构。 |
-| **GRUB2 Required** | reinstall.sh requires GRUB2. Other bootloaders (LILO, syslinux) are not supported. / 重装脚本需要 GRUB2，不支持其他引导程序。 |
+| Limitation / 限制  | Description / 说明                                                                                                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **No OpenVZ**      | This image requires full virtualization (KVM/Xen HVM). OpenVZ/LXC containers are NOT supported. / 此镜像需要全虚拟化（KVM/Xen HVM），不支持 OpenVZ/LXC 容器。 |
+| **Architecture**   | Only amd64 and arm64 are supported. / 仅支持 amd64 和 arm64 架构。                                                                                            |
+| **GRUB2 Required** | reinstall.sh requires GRUB2. Other bootloaders (LILO, syslinux) are not supported. / 重装脚本需要 GRUB2，不支持其他引导程序。                                 |
 
 ### reinstall.sh Limitations / 重装脚本限制
 
-| Limitation / 限制 | Description / 说明 |
-|---|---|
-| **Debian 11+ Only** | Only works on Debian 11 (bullseye) and later. Ubuntu/other distros are not supported. / 仅适用于 Debian 11 及以后版本，不支持 Ubuntu 等其他发行版。 |
-| **Full Disk Overwrite** | The script will COMPLETELY ERASE the target device. All data will be lost! / 脚本会完全擦除目标设备，所有数据将丢失！ |
-| **No RAID/LVM** | Software RAID and LVM are not tested. Use at your own risk. / 软件 RAID 和 LVM 未经测试，使用需自担风险。 |
-| **Single Disk** | Only supports single disk installation. / 仅支持单磁盘安装。 |
+| Limitation / 限制       | Description / 说明                                                                                                                                  |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Debian 11+ Only**     | Only works on Debian 11 (bullseye) and later. Ubuntu/other distros are not supported. / 仅适用于 Debian 11 及以后版本，不支持 Ubuntu 等其他发行版。 |
+| **Full Disk Overwrite** | The script will COMPLETELY ERASE the target device. All data will be lost! / 脚本会完全擦除目标设备，所有数据将丢失！                               |
+| **No RAID/LVM**         | Software RAID and LVM are not tested. Use at your own risk. / 软件 RAID 和 LVM 未经测试，使用需自担风险。                                           |
+| **Single Disk**         | Only supports single disk installation. / 仅支持单磁盘安装。                                                                                        |
 
 ### Network Limitations / 网络限制
 
-| Limitation / 限制 | Description / 说明 |
-|---|---|
-| **DHCP for Packer** | Packer build requires DHCP. Static IP during build is not supported. / Packer 构建需要 DHCP，不支持构建时使用静态 IP。 |
+| Limitation / 限制     | Description / 说明                                                                                                                      |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **DHCP for Packer**   | Packer build requires DHCP. Static IP during build is not supported. / Packer 构建需要 DHCP，不支持构建时使用静态 IP。                  |
 | **IPv6 DNS Fallback** | If IPv6 DNS cannot be detected, falls back to Google Public DNS (2001:4860:4860::8888). / IPv6 DNS 无法检测时会回退到 Google 公共 DNS。 |
 
 ---
