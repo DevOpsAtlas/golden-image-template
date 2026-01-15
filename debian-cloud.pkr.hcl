@@ -9,7 +9,7 @@ packer {
 
 variable "iso_url" {
   type    = string
-  default = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.2.0-amd64-netinst.iso"
+  default = "https://cdimage.debian.org/cdimage/archive/13.2.0/amd64/iso-cd/debian-13.2.0-amd64-netinst.iso"
 }
 
 variable "iso_checksum" {
